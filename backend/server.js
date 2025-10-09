@@ -26,6 +26,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Define associations with CASCADE delete
 User.hasMany(Task, { 
