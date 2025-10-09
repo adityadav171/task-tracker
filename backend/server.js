@@ -19,7 +19,7 @@ const app = express();
 const corsOptions = {
   origin: [
     'http://localhost:3000',
-    'https://task-tracker239.netlify.app/login' 
+    'https://task-tracker239.netlify.app' 
   ],
   credentials: true
 };
