@@ -13,8 +13,19 @@ const timelogRoutes = require('./routes/timelogs');
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
+
+
+// Add your Netlify URL to allowed origins
+const corsOptions = {
+  origin: [
+    'http://localhost:3000',
+    'https://task-tracker239.netlify.app/login' 
+  ],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
+
 
 // Define associations with CASCADE delete
 User.hasMany(Task, { 
